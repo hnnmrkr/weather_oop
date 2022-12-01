@@ -5,23 +5,28 @@
     <title>Weather OOP</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div class="col-lg-6 mx-auto text-center self-align-center">
-                <h1 id="location"></h1>
-                <p id="description"></p>
-                <p id="temp"></p>
+                <div class="weather">
+                    <h1 id="location"></h1>
+                    <h6 id="description"></h6>
+                    <h1 id="temp"></h1>
+                </div>
                 <!-- Change city -->
-                <h1>Change City</h1>
-                <form id="change-city">
-                    <div class="form-group">
-                        <label for="city-name">City name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <input type="submit" class="btn btn-light" value="Save Changes">
-                </form>
+                <div id="changecity">
+                    <h1>Change City</h1>
+                    <form id="change-city">
+                        <div class="form-group">
+                            <label for="city-name">City name</label>
+                            <input id="city-name" type="text" class="form-control">
+                        </div>
+                        <input type="submit" class="btn btn-dark" value="Save Changes">
+                    </form>
+                </div>
             </div>
         </div>
     </div>

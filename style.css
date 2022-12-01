@@ -1,0 +1,21 @@
+.weather {
+    padding: 50px;
+}
+
+.btn {
+    padding: 10px;
+}
+
+#location {
+    text-transform: uppercase;
+}
+
+#change-city {
+    padding: 20px;
+}
+
+#changecity {
+    padding: 30px;
+    border: 1px solid lightgrey;
+    border-radius: 20px;
+}
