@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Weather OOP</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 mx-auto text-center self-align-center">
+                <h1 id="location"></h1>
+                <p id="description"></p>
+                <p id="temp"></p>
+                <!-- Change city -->
+                <h1>Change City</h1>
+                <form id="change-city">
+                    <div class="form-group">
+                        <label for="city-name">City name</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <input type="submit" class="btn btn-light" value="Save Changes">
+                </form>
+            </div>
+        </div>
+    </div>
+<!-- Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Javascript files -->
+    <script src="app.js"></script>
+    <script src="classes/LS.js"></script>
+    <script src="classes/Weather.js"></script>
+    <script src="classes/UI.js"></script>
 </body>
 </html>
