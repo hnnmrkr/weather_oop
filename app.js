@@ -1,28 +1,31 @@
-document.addEventListener('DOMContentLoaded', cityWeather)
+// Elements
+const ls = new LS()
+const weatherLocation = ls.getLocationData()
+const weather = new Weather(weatherLocation)
+const ui = new UI()
 
-function weatherDataFetch(city) {
-    var key = 'd4704927e8828d83ba4cc33b4483e308';
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}`)
-        .then(function(resp){
-            return resp.json()
+document.addEventListener('DOMContentLoaded', getWeather)
+
+// Change city
+const form = document.querySelector('#change-city')
+form.addEventListener('submit', changeCityWeather)
+
+function changeCityWeather(event){
+    const city = document.querySelector('#city-name').value
+    weather.changeCity(city)
+    ls.setLocationData(city)
+    getWeather()
+    document.querySelector('#city-name').value = ''
+    event.preventDefault()
+}
+
+// Get weather data
+function getWeather(){
+    weather.getWeather()
+        .then(data =>{
+            ui.drawWeather(data)
         })
-        .then(function(data) {
-            console.log(data)
-            drawWeather(data)
-        })
-        .catch(function(){
-        });
+        .catch(error =>console.log(error));
 }
 
-function cityWeather(e){
-    weatherDataFetch('Tõrvandi');
-}
-
-function drawWeather( data ) {
-    var celcius = Math.round(parseFloat(data.main.temp)-273.15);
-    var description = data.weather[0].description;
-
-    document.querySelector('#description').innerHTML = description;
-    document.querySelector('#temp').innerHTML = celcius + '&deg;';
-    document.querySelector('#location').innerHTML = data.name;
-}
+getWeather()
